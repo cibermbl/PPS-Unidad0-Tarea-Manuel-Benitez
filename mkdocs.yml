@@ -1,0 +1,33 @@
+# -------------------------------------------------------------
+# CONFIGURACIÓN GENERAL DEL SITIO
+# -------------------------------------------------------------
+site_name: Documentación Unidad 0 - Tarea 
+# Define el título que aparecerá en la barra de navegación y en la etiqueta <title> del navegador.
+
+# -------------------------------------------------------------
+# ESTRUCTURA DE NAVEGACIÓN (MENÚ)
+# -------------------------------------------------------------
+# Define la lista de enlaces y el orden de aparición en el menú de navegación principal.
+nav:
+  # El nombre de la sección en el menú: nombre_archivo.md
+  - Home: index.md                 # Enlace a la página principal.
+  - Git: git.md                    # Documentación del proceso de creación del repositorio Git.
+  - GitHub Actions: gitActions.md  # Documentación del flujo de trabajo automatizado.
+  - GitHub Pages: gitPages.md      # Documentación del despliegue en GitHub Pages.
+  - Docker: docker.md              # Documentación de la configuración y despliegue con Docker y Nginx.
+  - Conclusiones: conclusiones.md  # Reflexiones y conclusiones finales.
+
+# -------------------------------------------------------------
+# DIRECTORIOS
+# -------------------------------------------------------------
+# Ruta de la carpeta que contiene todos los archivos .md (Markdown) de la documentación.
+# MkDocs buscará aquí los archivos listados en 'nav'.
+doc_dir: docs
+
+# -------------------------------------------------------------
+# TEMA (Opcional, pero común)
+# -------------------------------------------------------------
+# theme:
+#   name: 'material'   # Si se utiliza el tema Material for MkDocs.
+#   # highlightjs: true
+#   # code_fences: true
