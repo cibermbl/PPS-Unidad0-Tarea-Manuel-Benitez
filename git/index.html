@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Git - Documentación Unidad 0 - Tarea</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Documentación Unidad 0 - Tarea</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Git</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../gitActions/" class="nav-link">GitHub Actions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../gitPages/" class="nav-link">GitHub Pages</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../docker/" class="nav-link">Docker</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../conclusiones/" class="nav-link">Conclusiones</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../gitActions/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#1-creacion-del-repositorio-github" class="nav-link">1. CREACIÓN DEL REPOSITORIO GITHUB</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#preparacion-e-instalacion" class="nav-link">Preparación e instalación</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#creacion-de-cuenta-en-github" class="nav-link">Creación de cuenta en GitHub</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#creacion-de-vasriables-globales-de-acceso-a-github" class="nav-link">Creación de vasriables globales de acceso a GitHub</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#creacion-llave-ssh-y-adicion-en-github" class="nav-link">Creación llave ssh y adición en GitHub</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#adicion-de-la-llave-ssh-en-el-repositorio-en-github" class="nav-link">Adición de la llave ssh en el repositorio en GitHub</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#instalacion-de-github-cli" class="nav-link">Instalación de GitHub CLI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#archivo-mkdocsyml" class="nav-link">Archivo mkdocs.yml</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="1-creacion-del-repositorio-github"><strong>1. CREACIÓN DEL REPOSITORIO GITHUB</strong></h1>
+<hr />
+<h2 id="preparacion-e-instalacion">Preparación e instalación</h2>
+<p>En primer lugar voy a crear el directorio local en kali linux, para la unidad 0, y voy a definir mis variables de acceso a la cuenta de github que crearé a continuación:</p>
+<p><img alt="" src="../img/imagen-9-1024x450.png" /></p>
+<p>Copio y pego mis variables en el terminal:</p>
+<p><img alt="" src="../img/imagen-82-1024x583.png" /></p>
+<p>Creo otro directorio, llamado <em>tarea_ud0</em>, dentro</p>
+<p><img alt="" src="../img/imagen-11.png" /></p>
+<p>Consulto actualizaciones con → <em>apt update</em> y las ejetucto con <em>apt upgrade</em>:</p>
+<p><img alt="" src="../img/imagen-83.png" /></p>
+<p>A continuación instalo git:</p>
+<pre><code>sudo apt install git
+</code></pre>
+<pre><code>sudo apt install git
+</code></pre>
+<p><img alt="" src="../img/imagen-3.png" /></p>
+<h2 id="creacion-de-cuenta-en-github">Creación de cuenta en GitHub</h2>
+<p>Procedo a crearme la cuenta en github, en este enlace --&gt; <a href="https://github.com/signup?source=login">https://github.com/signup?source=login</a></p>
+<p><img alt="" src="../img/imagen-5.png" /></p>
+<p>relleno los datos correspondientes,</p>
+<p><img alt="" src="../img/imagen-7-1024x538.png" /></p>
+<p>Recibiré un código al email, aportado, y ya rellenándolo tendré la cuenta creada.</p>
+<p>Hago login en github,</p>
+<p><img alt="" src="../img/imagen-8-1024x666.png" /></p>
+<h2 id="creacion-de-vasriables-globales-de-acceso-a-github">Creación de vasriables globales de acceso a GitHub</h2>
+<p>A continuación voy a fijar las variables globales de acceso a github, en nuestro terminal de kali linux, para mayor comodidad, y asi las toma tal y como las definí al principio de esta tarea (la puedes ver el .txt de la izquierda que cree):</p>
+<pre><code>git config --global user.name $Tu_usuario_github
+git config --global user.email $Tu_mail_github
+git config --global init.defaultBranch main
+git config --global core.editor nano
+</code></pre>
+<pre><code>git config --global user.name $Tu_usuario_github
+git config --global user.email $Tu_mail_github
+git config --global init.defaultBranch main
+git config --global core.editor nano
+</code></pre>
+<p><img alt="" src="../img/imagen-12-1024x484.png" /></p>
+<p>Para comprobar que toma bien las variables, hago la comprobación con el nombre de usuario de github, mediante el comando --&gt; <em>git config user.name</em></p>
+<p>Y efectivamente, me lo devuelve correctamente en el terminal.</p>
+<p><img alt="" src="../img/imagen-14.png" /></p>
+<p>A continuación configuramos <em>git config --global core.pager ""</em> --&gt; con eso conseguimos que ante comandos como <em>git diff</em> o <em>git log</em> , los resultados se muestren por completo y sin paginar en el terminal.</p>
+<p><img alt="" src="../img/imagen-13.png" /></p>
+<h2 id="creacion-llave-ssh-y-adicion-en-github">Creación llave ssh y adición en GitHub</h2>
+<p>A continuación voy a crear la llave ssh para nuestro equipo para añadirla en github, y así darle un plus de seguridad en las conexiones:</p>
+<pre><code>ssh-keygen -t ed25519 -C $Tu_mail_github
+</code></pre>
+<pre><code>ssh-keygen -t ed25519 -C $Tu_mail_github
+</code></pre>
+<p><img alt="" src="../img/imagen-84.png" /></p>
+<p><img alt="" src="../img/imagen-18.png" /></p>
+<p>A continuación, procedo a copiar la clave ssh pública que he creado en github, y la borro en mi equipo,</p>
+<p><img alt="" src="../img/imagen-19.png" /></p>
+<p>y para copiarla en github, entro con la cuenta de github, y en mi perfil --&gt; <em>settings</em></p>
+<p><img alt="" src="../img/imagen-20.png" /></p>
+<p>y en <em>SSH and GPG keys</em></p>
+<p><img alt="" src="../img/imagen-22.png" /></p>
+<p>Añado la clave a través del botón verde New SSS key,</p>
+<p><img alt="" src="../img/imagen-23-1024x391.png" /></p>
+<p>le escribo un título, y añado:</p>
+<p><img alt="" src="../img/imagen-85-1024x601.png" /></p>
+<p><img alt="" src="../img/imagen-27-1024x303.png" /></p>
+<h2 id="adicion-de-la-llave-ssh-en-el-repositorio-en-github">Adición de la llave ssh en el repositorio en GitHub</h2>
+<p>A continuación procedo a crear un repositorio en github,</p>
+<p>haciendo clic en el avatar del perfil (arriba a la derecha con la flecha amarilla) y <em>Repositories</em>,</p>
+<p><img alt="" src="../img/imagen-29.png" /></p>
+<p><em>New</em>,</p>
+<p><img alt="" src="../img/imagen-30-1024x197.png" /></p>
+<p>Le doy nombre al repositorio, una descripción, y la opción de <em>Add README</em> activada:</p>
+<p><img alt="" src="../img/imagen-31.png" /></p>
+<p>y a continuación copio el código de acceso en ssh,</p>
+<p><img alt="" src="../img/imagen-32-1024x499.png" /></p>
+<p>y hago un <em>git clone</em> con ese código ssh del repositorio, tal que asi:</p>
+<pre><code>git clone git@github.com:cibermbl/PPS-Unidad0-Tarea-Manuel-Benitez.git
+</code></pre>
+<pre><code>git clone git@github.com:cibermbl/PPS-Unidad0-Tarea-Manuel-Benitez.git
+</code></pre>
+<p>Observamos, que nos da una primera advertencia sobre la conexión al repositorio por ssh, y a la pregunta de si estoy seguro de que quiero conectarme escribo Yes,</p>
+<p><img alt="" src="../img/imagen-86.png" /></p>
+<p>y observamos como ha creado el nuevo directorio --&gt; <em>PPS-Unidad0-Tarea-Manuel-Benitez,</em></p>
+<p>navego dentro de él, y listo lo que contiene con -&gt; <em>ls -la</em></p>
+<p>Observamos, como contiene el <em>README.md</em>, el directorio <em>.git,</em> etc.</p>
+<p><img alt="" src="../img/imagen-35-1024x446.png" /></p>
+<h2 id="instalacion-de-github-cli">Instalación de GitHub CLI</h2>
+<p>A continuación, procedo a crear la estructura del repositorio. Que debe ser como éste:</p>
+<p><img alt="" src="../img/imagen-36.png" /></p>
+<p>Para ello, en primer lugar procedo a instalar la herramienta GitHub CLI, la cual nos permite interactuar directamente desde la linea de comandos con GitHub, y nos permite crear, modificar, repositorios directamente desde la terminal.</p>
+<p>Nota.-. En primer lugar, me cercioro de que ya tengo las variables inicializadas, tal y como lo hice en renglones anteriores, mediante el código:</p>
+<pre><code>git config user.name
+</code></pre>
+<pre><code>git config user.name
+</code></pre>
+<p><img alt="" src="../img/imagen-37.png" /></p>
+<p>Y efectivamente, tengo las variables declaradas, correctamente.</p>
+<p>Instalación de GitHub CLI:</p>
+<pre><code>sudo apt update
+sudo apt install gh
+</code></pre>
+<pre><code>sudo apt update
+sudo apt install gh
+</code></pre>
+<p><img alt="" src="../img/imagen-38.png" /></p>
+<p><img alt="" src="../img/imagen-39.png" /></p>
+<h3 id="autenticacion-en-githubcom-desde-github-cli">Autenticación en github.com desde GitHub CLI</h3>
+<p>Una vez instalado, procedo a autenticarme en github.com:</p>
+<pre><code>gh auth login
+</code></pre>
+<pre><code>gh auth login
+</code></pre>
+<p>Nos das dos opciones de autenticación, y escojo <em>GitHub.com</em> (con el cursos y enter),</p>
+<p><img alt="" src="../img/imagen-40.png" /></p>
+<p>A continuación nos da dos opciones de protocolo de conexión, y dado que ya tengo configurado por ssh, para seguir la política de buenas prácticas en ciberseguridad, la escojo,</p>
+<p><img alt="" src="../img/imagen-41.png" /></p>
+<p>Observamos, como reconoce la clave pública, que anteriormente añadí en github, y le damos a enter,</p>
+<p><img alt="" src="../img/imagen-42.png" /></p>
+<p>A continuación procedo a logearme mediante la opción --&gt; <em>Login with a web browser,</em></p>
+<p>Nos genera una clave de un solo uso, la cual deberemos de copiar en github.com,</p>
+<p><img alt="" src="../img/imagen-43.png" /></p>
+<p>Presiono Enter, y se abre el navegador, y procedemos a entrar con el usuario y contraseña de github, elegimos signed in as (con nuestro usuario de github), y clic en tecla <em>Continue,</em></p>
+<p><img alt="" src="../img/imagen-44-1024x694.png" /></p>
+<p>Y ya podemos pegar el código anterior:</p>
+<p><img alt="" src="../img/imagen-45-1024x687.png" /></p>
+<p>Clic en <em>Authorize github</em>,</p>
+<p><img alt="" src="../img/imagen-46.png" /></p>
+<p>y ya comprobamos como ya está sincronizado con mi ordenador,</p>
+<p><img alt="" src="../img/imagen-47-1024x831.png" /></p>
+<h3 id="creacion-de-la-estructura-del-repositorio">Creación de la estructura del repositorio</h3>
+<p>A continuación, paso a crear la estructura del repositorio:</p>
+<p><img alt="" src="../img/imagen-36.png" /></p>
+<p>Comandos:</p>
+<pre><code>#Para crear los directorios
+&lt;div&gt;&lt;/div&gt;
+mkdir calculator docs
+&lt;div&gt;&lt;/div&gt;
+#Para crear los archivos
+&lt;div&gt;&lt;/div&gt;
+touch directorio/archivo
+&lt;div&gt;&lt;/div&gt;
+#En el ejemplo:
+&lt;div&gt;&lt;/div&gt;
+touch calculator/__init__.py calculator/gui.py docs/index.md mkdocs.yml requiriments.txt
+&lt;div&gt;&lt;/div&gt;
+touch docs/git.m docs/gitActions.md docs/gitPages.md docs/docker.md docs/conclusiones.md
+</code></pre>
+<pre><code>#Para crear los directorios
+
+mkdir calculator docs
+
+#Para crear los archivos
+
+touch directorio/archivo
+
+#En el ejemplo:
+
+touch calculator/__init__.py calculator/gui.py docs/index.md mkdocs.yml requiriments.txt
+
+touch docs/git.m docs/gitActions.md docs/gitPages.md docs/docker.md docs/conclusiones.md
+</code></pre>
+<p><img alt="" src="../img/imagen-48-1024x706.png" /></p>
+<p>Compruebo como está el estado del proyecto en Github:</p>
+<pre><code>git status
+</code></pre>
+<pre><code>git status
+</code></pre>
+<p>y se puede comprobar como los archivos están los archivos sin seguimiento,</p>
+<p><img alt="" src="../img/imagen-49.png" /></p>
+<p>Añado todos los directorios y archivos al directorio github,</p>
+<pre><code>git add .
+</code></pre>
+<pre><code>git add .
+</code></pre>
+<p>Compruebo el estado, y observamos como aparecen en el area <em>staged</em> (en verde),</p>
+<p><img alt="" src="../img/imagen-50.png" /></p>
+<p>Muestro el contenido del directorio en forma de árbol,</p>
+<pre><code>tree -a
+</code></pre>
+<pre><code>tree -a
+</code></pre>
+<p><img alt="" src="../img/imagen-51.png" /></p>
+<h3 id="eliminacion-del-directorio-git-opcional">Eliminación del directorio .git (opcional)</h3>
+<p>Procedo a borrar el directgorio .git,</p>
+<pre><code>rm -rf .git*
+</code></pre>
+<pre><code>rm -rf .git*
+</code></pre>
+<p><img alt="" src="../img/imagen-55.png" /></p>
+<p>Voy a actualizar el repositorio en remoto, para que no incluya el directorio .git</p>
+<pre><code>git init
+git add.
+git commit -m &quot;Actualización de los archivos después de borrar .git&quot;
+git remote add origin git@github.com:cibermbl/PPS-Unidad0-Tarea-Manuel-Benitez.git
+</code></pre>
+<pre><code>git init
+git add.
+git commit -m &quot;Actualización de los archivos después de borrar .git&quot;
+git remote add origin git@github.com:cibermbl/PPS-Unidad0-Tarea-Manuel-Benitez.git
+</code></pre>
+<p><img alt="" src="../img/imagen-56.png" /></p>
+<p>Voy a confirmar todos los cambios para la creación del repositorio, mediante los comandos,</p>
+<p>y para subir los cambios,</p>
+<p><img alt="" src="../img/imagen-53.png" /></p>
+<p>Debido a la eliminación del escritorio .git, me da error por que hay commits que ya no están en el nuevo repositorio modificado,</p>
+<p><img alt="" src="../img/imagen-57.png" /></p>
+<p>Para subsanar esto,</p>
+<pre><code># forzamos el git push (eliminando los antiguos commits)
+&lt;div&gt;&lt;/div&gt;
+git push origin main -f
+</code></pre>
+<pre><code># forzamos el git push (eliminando los antiguos commits)
+
+git push origin main -f
+</code></pre>
+<p><img alt="" src="../img/imagen-58.png" /></p>
+<p>ya está todo subido en remoto a github,</p>
+<p><img alt="" src="../img/imagen-59-1024x668.png" /></p>
+<p><img alt="" src="../img/imagen-60-1024x576.png" /></p>
+<h2 id="archivo-mkdocsyml">Archivo <em>mkdocs.yml</em></h2>
+<p>Por último, voy a crear dar contenido al archivo <em>mkdocs.yml,</em> que es un archivo en lenguaje de marcas .yml, el cual sirve para crear toda la estructura de una página web estática html, a partir de los archivos .md que creamos en la estructura situados en la carpeta <em>docs/</em>,</p>
+<p>├── docs/<br />
+│ └── index.md<br />
+│ └── git.md<br />
+│ └── gitActions.md<br />
+│ └── gitPages.md<br />
+│ └── docker.md<br />
+│ └── conclusiones.md  </p>
+<p>Pues con:</p>
+<pre><code>nano mkdocs.yml
+</code></pre>
+<pre><code>nano mkdocs.yml
+</code></pre>
+<p>Escribo lo siguiente:</p>
+<pre><code># -------------------------------------------------------------
+# CONFIGURACIÓN GENERAL DEL SITIO
+# -------------------------------------------------------------
+site_name: Documentación Unidad 0 - Tarea 
+# Define el título que aparecerá en la barra de navegación y en la etiqueta &lt;title&gt; del navegador.
+&lt;div&gt;&lt;/div&gt;
+# -------------------------------------------------------------
+# ESTRUCTURA DE NAVEGACIÓN (MENÚ)
+# -------------------------------------------------------------
+# Define la lista de enlaces y el orden de aparición en el menú de navegación principal.
+nav:
+  # El nombre de la sección en el menú: nombre_archivo.md
+  - Home: index.md                 # Enlace a la página principal.
+  - Git: git.md                    # Documentación del proceso de creación del repositorio Git.
+  - GitHub Actions: gitActions.md  # Documentación del flujo de trabajo automatizado.
+  - GitHub Pages: gitPages.md      # Documentación del despliegue en GitHub Pages.
+  - Docker: docker.md              # Documentación de la configuración y despliegue con Docker y Nginx.
+  - Conclusiones: conclusiones.md  # Reflexiones y conclusiones finales.
+&lt;div&gt;&lt;/div&gt;
+# -------------------------------------------------------------
+# DIRECTORIOS
+# -------------------------------------------------------------
+# Ruta de la carpeta que contiene todos los archivos .md (Markdown) de la documentación.
+# MkDocs buscará aquí los archivos listados en 'nav'.
+doc_dir: docs
+&lt;div&gt;&lt;/div&gt;
+# -------------------------------------------------------------
+# TEMA (Opcional, pero común)
+# -------------------------------------------------------------
+# theme:
+#   name: 'material'   # Si se utiliza el tema Material for MkDocs.
+#   # highlightjs: true
+#   # code_fences: true
+
+</code></pre>
+<pre><code># -------------------------------------------------------------
+# CONFIGURACIÓN GENERAL DEL SITIO
+# -------------------------------------------------------------
+site_name: Documentación Unidad 0 - Tarea 
+# Define el título que aparecerá en la barra de navegación y en la etiqueta &lt;title&gt; del navegador.
+
+# -------------------------------------------------------------
+# ESTRUCTURA DE NAVEGACIÓN (MENÚ)
+# -------------------------------------------------------------
+# Define la lista de enlaces y el orden de aparición en el menú de navegación principal.
+nav:
+  # El nombre de la sección en el menú: nombre_archivo.md
+  - Home: index.md                 # Enlace a la página principal.
+  - Git: git.md                    # Documentación del proceso de creación del repositorio Git.
+  - GitHub Actions: gitActions.md  # Documentación del flujo de trabajo automatizado.
+  - GitHub Pages: gitPages.md      # Documentación del despliegue en GitHub Pages.
+  - Docker: docker.md              # Documentación de la configuración y despliegue con Docker y Nginx.
+  - Conclusiones: conclusiones.md  # Reflexiones y conclusiones finales.
+
+# -------------------------------------------------------------
+# DIRECTORIOS
+# -------------------------------------------------------------
+# Ruta de la carpeta que contiene todos los archivos .md (Markdown) de la documentación.
+# MkDocs buscará aquí los archivos listados en 'nav'.
+doc_dir: docs
+
+# -------------------------------------------------------------
+# TEMA (Opcional, pero común)
+# -------------------------------------------------------------
+# theme:
+#   name: 'material'   # Si se utiliza el tema Material for MkDocs.
+#   # highlightjs: true
+#   # code_fences: true
+</code></pre>
+<p>Como se observa en el el mkdocs.yml, en nav, partir de las .md que están en /docs, crea un menú de navegación. En doc_dir: se define la ruta donde están los .md</p>
+<p><img alt="" src="../img/imagen-63-1024x576.png" /></p>
+<pre><code># Guardo el archivo
+Ctrl + o
+</code></pre>
+<pre><code># Guardo el archivo
+Ctrl + o
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
