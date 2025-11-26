@@ -1,5 +1,7 @@
 ## **1\. Creación del repositorio**
 
+# Preparación e instalación #
+
 En primer lugar voy a crear el directorio local en kali linux, para la unidad 0, y voy a definir mis variables de acceso a la cuenta de github que crearé a continuación:
 
 ![](img/imagen-9-1024x450.png)
@@ -27,6 +29,8 @@ sudo apt install git
 ```
 
 ![](img/imagen-3.png)
+
+# Creación de cuenta en GitHub #
 
 Procedo a crearme la cuenta en github, en este enlace --> [https://github.com/signup?source=login](https://github.com/signup?source=login)
 
