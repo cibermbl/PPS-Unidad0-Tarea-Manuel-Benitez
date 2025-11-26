@@ -1,7 +1,10 @@
 
-## **2\. Creación de WorkFlow de GitHub Actions**
+# **2\. CREACIÓN DEL WORKFLOW DE GITHUB ACTIONS**
+---
+## Creamos repositorio .github
 
-En primer lugar mkdocs es una extensión de python, la cual ejecutaremos en el terminal mediante el workflow que vamos a crear, ejecutará mediante _git push_, instrucciones determinadas.
+
+En primer lugar mkdocs es una extensión de python, la cual ejecutaremos en el terminal mediante el workflow que vamos a crear, y ejecutará mediante _git push_ instrucciones determinadas.
 
 Dicho workflow debe ir dentro de un directorio llamado _.github_, vamos a comprobar mediante:
 
@@ -30,6 +33,8 @@ mkdir -p .github/workflows
 ![](img/imagen-65-1024x576.png)
 
 ![](img/imagen-66-1024x573.png)
+
+## Creamos archivo deploy_docs.yml
 
 Y para definir el flujo de trabajo, creo el siguiente archivo,
 
@@ -189,7 +194,8 @@ jobs:
 
 ![](img/imagen-67-1024x576.png)
 
-Para entender el _deploy\_doc_s.yml:
+### Entendiendo deploy_docs.yml
+
 
 Este archivo hace funcionar un workflow de Github Actions, y se consigue crear una serie de tareas automáticas que Github las ejecutará automáticamente.
 
@@ -279,6 +285,8 @@ env:
 ```
 
 MkDocs genera la web a partir de los archivos .md de la carpeta /docs, los publica automáticamente en la rama gh-pages, y Github Pages lo utiliza para mostrar la documentación online. El token, permite que MkDocs, tenga los permisos necesarios para subir esos cambios al repositorio.
+
+## Subimos los cambios a remoto en GitHub
 
 A continuación voy a subir todos los cambios a remoto, mediante _commit_ y _push_,
 

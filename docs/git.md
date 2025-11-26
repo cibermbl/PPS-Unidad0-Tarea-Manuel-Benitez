@@ -1,4 +1,6 @@
-# **1\. Creación del repositorio**
+# **1\. CREACIÓN DEL REPOSITORIO GITHUB**
+
+---
 
 ## Preparación e instalación 
 
@@ -76,7 +78,7 @@ A continuación configuramos _git config --global core.pager ""_ --> con eso con
 
 ![](img/imagen-13.png)
 
-# Creación llave ssh y adición en GitHub
+## Creación llave ssh y adición en GitHub
 
 A continuación voy a crear la llave ssh para nuestro equipo para añadirla en github, y así darle un plus de seguridad en las conexiones:
 
@@ -114,7 +116,7 @@ le escribo un título, y añado:
 
 ![](img/imagen-27-1024x303.png)
 
-### Adición de la llave ssh en el repositorio en GitHub
+## Adición de la llave ssh en el repositorio en GitHub
 
 A continuación procedo a crear un repositorio en github,
 
