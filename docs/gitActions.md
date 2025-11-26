@@ -282,7 +282,7 @@ MkDocs genera la web a partir de los archivos .md de la carpeta /docs, los publi
 
 A continuación voy a subir todos los cambios a remoto, mediante _commit_ y _push_,
 
-  ```
+```
   git add .
   git commit -m "Configuración de MkDocs y pipeline de documentación"
   git push origin main
