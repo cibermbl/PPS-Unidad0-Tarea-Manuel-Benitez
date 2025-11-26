@@ -34,4 +34,4 @@ Y efectivamente vemos como la carga, correctamente:
 
 Ahora está todas las páginas vacias. Ya podemos empezar a darle contenido a cada una de las páginas, que están en el directorio /docs, en leguaje markdown.
 
-\]\]>
+
