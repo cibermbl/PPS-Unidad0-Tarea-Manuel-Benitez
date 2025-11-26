@@ -1,4 +1,5 @@
-## 2\. Creación de WorkFlow de GitHub Actions
+
+## **2\. Creación de WorkFlow de GitHub Actions
 
 En primer lugar mkdocs es una extensión de python, la cual ejecutaremos en el terminal mediante el workflow que vamos a crear, ejecutará mediante _git push_, instrucciones determinadas.
 
