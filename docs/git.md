@@ -1,7 +1,3 @@
----
-"Tarea pps"
----
-
 ## **1\. Creación del repositorio**
 
 En primer lugar voy a crear el directorio local en kali linux, para la unidad 0, y voy a definir mis variables de acceso a la cuenta de github que crearé a continuación:
