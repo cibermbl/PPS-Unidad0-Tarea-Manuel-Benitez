@@ -46,6 +46,8 @@ Hago login en github,
 
 ![](img/imagen-8-1024x666.png)
 
+## Creación de vasriables globales de acceso a GitHub
+
 A continuación voy a fijar las variables globales de acceso a github, en nuestro terminal de kali linux, para mayor comodidad, y asi las toma tal y como las definí al principio de esta tarea (la puedes ver el .txt de la izquierda que cree):
 
 ```
@@ -73,6 +75,8 @@ Y efectivamente, me lo devuelve correctamente en el terminal.
 A continuación configuramos _git config --global core.pager ""_ --> con eso conseguimos que ante comandos como _git diff_ o _git log_ , los resultados se muestren por completo y sin paginar en el terminal.
 
 ![](img/imagen-13.png)
+
+# Creación llave ssh y adición en GitHub
 
 A continuación voy a crear la llave ssh para nuestro equipo para añadirla en github, y así darle un plus de seguridad en las conexiones:
 
@@ -109,6 +113,8 @@ le escribo un título, y añado:
 ![](img/imagen-85-1024x601.png)
 
 ![](img/imagen-27-1024x303.png)
+
+### Adición de la llave ssh en el repositorio en GitHub
 
 A continuación procedo a crear un repositorio en github,
 
@@ -150,6 +156,9 @@ Observamos, como contiene el _README.md_, el directorio _.git,_ etc.
 
 ![](img/imagen-35-1024x446.png)
 
+
+## Instalación de GitHub CLI
+
 A continuación, procedo a crear la estructura del repositorio. Que debe ser como éste:
 
 ![](img/imagen-36.png)
@@ -170,6 +179,8 @@ git config user.name
 
 Y efectivamente, tengo las variables declaradas, correctamente.
 
+
+
 Instalación de GitHub CLI:
 
 ```
@@ -185,6 +196,8 @@ sudo apt install gh
 ![](img/imagen-38.png)
 
 ![](img/imagen-39.png)
+
+### Autenticación en github.com desde GitHub CLI
 
 Una vez instalado, procedo a autenticarme en github.com:
 
@@ -230,11 +243,14 @@ y ya comprobamos como ya está sincronizado con mi ordenador,
 
 ![](img/imagen-47-1024x831.png)
 
+### Creación de la estructura del repositorio
+
 A continuación, paso a crear la estructura del repositorio:
 
 ![](img/imagen-36.png)
 
 Comandos:
+
 
 ```
 #Para crear los directorios
@@ -310,6 +326,8 @@ tree -a
 
 ![](img/imagen-51.png)
 
+### Eliminación del directorio .git (opcional)
+
 Procedo a borrar el directgorio .git,
 
 ```
@@ -371,6 +389,8 @@ ya está todo subido en remoto a github,
 ![](img/imagen-59-1024x668.png)
 
 ![](img/imagen-60-1024x576.png)
+
+## Archivo *mkdocs.yml*
 
 Por último, voy a crear dar contenido al archivo _mkdocs.yml,_ que es un archivo en lenguaje de marcas .yml, el cual sirve para crear toda la estructura de una página web estática html, a partir de los archivos .md que creamos en la estructura situados en la carpeta _docs/_,
 
