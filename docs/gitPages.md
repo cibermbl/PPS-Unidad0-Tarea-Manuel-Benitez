@@ -1,4 +1,6 @@
-## **3\. Vinculación con GitHub Pages**
+# **3\. VINCULACIÓN CON GITHUB PAGES**
+
+---
 
 Una vez comprobado que nuestro workflow está en marcha, y ha completado una pipeline, hacemos estos pasos para activar Github Pages:
 
@@ -20,13 +22,15 @@ Dejamos el directorio /(root) que viene por defecto y clic en save, para guardar
 
 Con esto ya hemos configurado la fuente del despliegue, a la rama gh-pages.
 
+## Generación del dominio de gh-pages
+
 Observamos, como ya se ha generado el dominio de gh-pages --> `cibermbl.github.io`
 
 ![](img/imagen-80-1024x577.png)
 
 Para ver si carga la pagina hemos de añadirle al dominio el repositorio de Github, que en este caso es ->
 
-_**[cibermbl.github.io/PPS-Unidad0-Tarea-Manuel-Benitez](http://cibermbl.github.io/PPS-Unidad0-Tarea-Manuel-Benitez)**_
+_**[cibermbl.github.io/PPS-Unidad0-Tarea-Manuel-Benitez]**(http://cibermbl.github.io/PPS-Unidad0-Tarea-Manuel-Benitez)**_
 
 Y efectivamente vemos como la carga, correctamente:
 
