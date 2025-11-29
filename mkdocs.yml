@@ -22,7 +22,7 @@ nav:
 # -------------------------------------------------------------
 # Ruta de la carpeta que contiene todos los archivos .md (Markdown) de la documentación.
 # MkDocs buscará aquí los archivos listados en 'nav'.
-doc_dir: docs
+docs_dir: docs
 
 # -------------------------------------------------------------
 # TEMA (Opcional, pero común)
