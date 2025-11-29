@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Docker - Documentación Unidad 0 - Tarea</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Documentación Unidad 0 - Tarea</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../git/" class="nav-link">Git</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../gitActions/" class="nav-link">GitHub Actions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../gitPages/" class="nav-link">GitHub Pages</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Docker</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../conclusiones/" class="nav-link">Conclusiones</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../gitPages/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../conclusiones/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#4-creacion-de-un-contenedor-de-servicios-nginx-con-docker" class="nav-link">4. CREACIÓN DE UN CONTENEDOR DE SERVICIOS NGINX CON DOCKER</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#introduccion" class="nav-link">Introducción</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1-captura-creacion-de-la-maquina-contenedor" class="nav-link">1. CAPTURA Creación de la máquina (contenedor)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-captura-contenedor-nginx-en-marcha-y-mostrando-la-web-de-github-pages-en-localhost" class="nav-link">2. CAPTURA Contenedor NGINX en marcha y mostrando la web de GitHub pages en localhost.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-capturas-del-archivo-inspecttxt" class="nav-link">3. CAPTURAS del archivo -&gt; inspect.txt</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="4-creacion-de-un-contenedor-de-servicios-nginx-con-docker"><strong>4. CREACIÓN DE UN CONTENEDOR DE SERVICIOS NGINX CON DOCKER</strong></h1>
+<hr />
+<h2 id="introduccion">Introducción</h2>
+<p>La idea es crear un contenedor servicios web con NGINX que para que sirva para publicar documentación que se ha generado previamente en github.io con gitActions y gitPages. Esto nos servirá para poner en practica los conocimientos en Docker.</p>
+<p>Si echamos un vistazo a la rama gh-pages de nuestro repositorio -&gt; <a href="https://github.com/cibermbl/PPS-Unidad0-Tarea-Manuel-Benitez.git">https://github.com/cibermbl/PPS-Unidad0-Tarea-Manuel-Benitez.git</a> podemos observar como vemos la estructura archivos de la web estática que sirve para la documentación en GitHub pages:</p>
+<p><img alt="" src="../img/14.png" /></p>
+<p>Mediante Bind Mount en docker podemos persistir los datos de la rama gh-pages de Github, de una manera solvente. Veamos:</p>
+<p>En primer lugar vamos a pasar a la rama gh-pages mediante:</p>
+<pre><code>git checkout gh-pages
+</code></pre>
+<p><img alt="" src="../img/1.png" /></p>
+<p>Que no cunda el pánico, el error que vemos, es debido a que por defecto, Github clona la rama main, y por lo tanto no tenemos en local la rama gh-pages, por lo tanto procedemos a clonarla,</p>
+<pre><code>git fetch
+git checkout gh-pages
+</code></pre>
+<p><img alt="" src="../img/2.png" /></p>
+<p>Observamos que no tenemos permiso para las rutas de las imágenes, y es por que al cambiar a ramas gh-pages, el directorio /doc/img con las imágenes no existe, aún así al final nos indica de que si ha cambiado de rama satisfactoriamente:</p>
+<p><img alt="" src="../img/3.png" /></p>
+<p>Para arreglar estos permisos, hacemos:</p>
+<pre><code>sudo chown -R $USER:$USER docs/
+&lt;div&gt;&lt;/div&gt;
+# Vuelvo a cambiar de rama para comprobar que no hay errores
+&lt;div&gt;&lt;/div&gt;
+git checkout main
+</code></pre>
+<p><img alt="" src="../img/4.png" /></p>
+<p>Aún me indica que aún hay archivos modificados o pendientes y Git aún no permite cambiar de rama, para no perderlos, para arreglar esto hacemos:</p>
+<pre><code># Para ver que archivos están aún pendientes
+
+git status
+</code></pre>
+<p><img alt="" src="../img/5.png" /></p>
+<p>Esto significa que tu carpeta docs/ existe pero no forma parte de la rama gh-pages.</p>
+<p>Para arreglar esto, sin perder el directorio docs/ en main, tenemos que añadir el directorio docs/ y hacer un commit:</p>
+<pre><code>git add docs/
+git commit -m &quot;Añadiendo directorio docs&quot;
+</code></pre>
+<p>Volvemos a la rama gh-pages,</p>
+<pre><code>git checkout gh-pages
+</code></pre>
+<p>y comprobamos que ya está en la rama correcta:</p>
+<pre><code>* gh-pages
+  main
+</code></pre>
+<p>y hacemos un push de la rama:</p>
+<pre><code>git push origin gh-pages
+</code></pre>
+<p><img alt="" src="../img/6.png" /></p>
+<p>Una vez que se ha subido correctmante la rama gh-pages, comprobamos lo siguiente:</p>
+<p>En el repositorio de Github -&gt; Settings/pages chequeamos en Build and deployment, en el desplegable Source seleccionamos Deploy from a branch y seleccionamos la rama gh-pages y en Folder debe de estar habilitado (porque ya lo habilité en apartados anteriores), el directorio / (root):</p>
+<p><img alt="" src="../img/7.png" /></p>
+<p>A continuación compruebo que el directorio contiene la web estática con contenido, HTML, CSS, JS, imágenes, etc:</p>
+<pre><code>ls -l
+</code></pre>
+<p><img alt="" src="../img/8.png" /></p>
+<p>A continuacíon creo el contenedor NGINX con bind mount:</p>
+<pre><code>docker run --name PPSUnidad0-Tarea_Manuel_Benitez \
+ -p 8085:80 \
+ -v $(pwd):/usr/share/nginx/html \
+ -d nginx
+</code></pre>
+<p>nombre del contenedor: PPSUnidad0-Tarea_Manuel_Benitez</p>
+<p>puerto: 8085</p>
+<p>Bind mount monta el directorio de la web</p>
+<p>Y a continuación compruebo que el contenedor está corriendo:</p>
+<pre><code>docker ps
+</code></pre>
+<h2 id="1-captura-creacion-de-la-maquina-contenedor"><strong>1. CAPTURA Creación de la máquina (contenedor)</strong></h2>
+<p><img alt="" src="../img/9.png" /></p>
+<p>A continuación vamos a comprobar que dicha web estática ya está cargando a través del puerto 8085 en local.</p>
+<p>En el navegador de la máquina kali, cargo la siguiente url -&gt; <strong>http://localhost:8085</strong></p>
+<h2 id="2-captura-contenedor-nginx-en-marcha-y-mostrando-la-web-de-github-pages-en-localhost">2. CAPTURA Contenedor NGINX en marcha y mostrando la web de GitHub pages en localhost.</h2>
+<p><img alt="" src="../img/10.png" /></p>
+<p>A continuo procedo a la creación del archivo docker inspect, que nos mostrará información detallada del contenedor creado.</p>
+<pre><code>docker inspect PPSUnidad0-Tarea_Manuel_Benitez &gt; inspect.txt
+</code></pre>
+<h2 id="3-capturas-del-archivo-inspecttxt">3. <strong>CAPTURAS del archivo -&gt; inspect.txt</strong></h2>
+<p><img alt="" src="../img/11.png" /></p>
+<p><img alt="" src="../img/12.png" /></p>
+<p><img alt="" src="../img/13.png" /></p>
+<p>Adjunto archivo inspect.txt, en el archivo comprimido de la entrega de la tarea.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
