@@ -85,14 +85,115 @@
     </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-light">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#4-creacion-de-un-contenedor-de-servicios-nginx-con-docker" class="nav-link">4. CREACIÓN DE UN CONTENEDOR DE SERVICIOS NGINX CON DOCKER</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#introduccion" class="nav-link">Introducción</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1-captura-creacion-de-la-maquina-contenedor" class="nav-link">1. CAPTURA Creación de la máquina (contenedor)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-captura-contenedor-nginx-en-marcha-y-mostrando-la-web-de-github-pages-en-localhost" class="nav-link">2. CAPTURA Contenedor NGINX en marcha y mostrando la web de GitHub pages en localhost.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-capturas-del-archivo-inspecttxt" class="nav-link">3. CAPTURAS del archivo -&gt; inspect.txt</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="4-creacion-de-un-contenedor-de-servicios-nginx-con-docker"><strong>4. CREACIÓN DE UN CONTENEDOR DE SERVICIOS NGINX CON DOCKER</strong></h1>
+<hr />
+<h2 id="introduccion">Introducción</h2>
+<p>La idea es crear un contenedor servicios web con NGINX que para que sirva para publicar documentación que se ha generado previamente en github.io con gitActions y gitPages. Esto nos servirá para poner en practica los conocimientos en Docker.</p>
+<p>Si echamos un vistazo a la rama gh-pages de nuestro repositorio -&gt; <a href="https://github.com/cibermbl/PPS-Unidad0-Tarea-Manuel-Benitez.git">https://github.com/cibermbl/PPS-Unidad0-Tarea-Manuel-Benitez.git</a> podemos observar como vemos la estructura archivos de la web estática que sirve para la documentación en GitHub pages:</p>
+<p><img alt="" src="../img/14.png" /></p>
+<p>Mediante Bind Mount en docker podemos persistir los datos de la rama gh-pages de Github, de una manera solvente. Veamos:</p>
+<p>En primer lugar vamos a pasar a la rama gh-pages mediante:</p>
+<pre><code>git checkout gh-pages
+</code></pre>
+<p><img alt="" src="../img/1.png" /></p>
+<p>Que no cunda el pánico, el error que vemos, es debido a que por defecto, Github clona la rama main, y por lo tanto no tenemos en local la rama gh-pages, por lo tanto procedemos a clonarla,</p>
+<pre><code>git fetch
+git checkout gh-pages
+</code></pre>
+<p><img alt="" src="../img/2.png" /></p>
+<p>Observamos que no tenemos permiso para las rutas de las imágenes, y es por que al cambiar a ramas gh-pages, el directorio /doc/img con las imágenes no existe, aún así al final nos indica de que si ha cambiado de rama satisfactoriamente:</p>
+<p><img alt="" src="../img/3.png" /></p>
+<p>Para arreglar estos permisos, hacemos:</p>
+<pre><code>sudo chown -R $USER:$USER docs/
+&lt;div&gt;&lt;/div&gt;
+# Vuelvo a cambiar de rama para comprobar que no hay errores
+&lt;div&gt;&lt;/div&gt;
+git checkout main
+</code></pre>
+<p><img alt="" src="../img/4.png" /></p>
+<p>Aún me indica que aún hay archivos modificados o pendientes y Git aún no permite cambiar de rama, para no perderlos, para arreglar esto hacemos:</p>
+<pre><code># Para ver que archivos están aún pendientes
+
+git status
+</code></pre>
+<p><img alt="" src="../img/5.png" /></p>
+<p>Esto significa que tu carpeta docs/ existe pero no forma parte de la rama gh-pages.</p>
+<p>Para arreglar esto, sin perder el directorio docs/ en main, tenemos que añadir el directorio docs/ y hacer un commit:</p>
+<pre><code>git add docs/
+git commit -m &quot;Añadiendo directorio docs&quot;
+</code></pre>
+<p>Volvemos a la rama gh-pages,</p>
+<pre><code>git checkout gh-pages
+</code></pre>
+<p>y comprobamos que ya está en la rama correcta:</p>
+<pre><code>* gh-pages
+  main
+</code></pre>
+<p>y hacemos un push de la rama:</p>
+<pre><code>git push origin gh-pages
+</code></pre>
+<p><img alt="" src="../img/6.png" /></p>
+<p>Una vez que se ha subido correctmante la rama gh-pages, comprobamos lo siguiente:</p>
+<p>En el repositorio de Github -&gt; Settings/pages chequeamos en Build and deployment, en el desplegable Source seleccionamos Deploy from a branch y seleccionamos la rama gh-pages y en Folder debe de estar habilitado (porque ya lo habilité en apartados anteriores), el directorio / (root):</p>
+<p><img alt="" src="../img/7.png" /></p>
+<p>A continuación compruebo que el directorio contiene la web estática con contenido, HTML, CSS, JS, imágenes, etc:</p>
+<pre><code>ls -l
+</code></pre>
+<p><img alt="" src="../img/8.png" /></p>
+<p>A continuacíon creo el contenedor NGINX con bind mount:</p>
+<pre><code>docker run --name PPSUnidad0-Tarea_Manuel_Benitez \
+ -p 8085:80 \
+ -v $(pwd):/usr/share/nginx/html \
+ -d nginx
+</code></pre>
+<p>nombre del contenedor: PPSUnidad0-Tarea_Manuel_Benitez</p>
+<p>puerto: 8085</p>
+<p>Bind mount monta el directorio de la web</p>
+<p>Y a continuación compruebo que el contenedor está corriendo:</p>
+<pre><code>docker ps
+</code></pre>
+<h2 id="1-captura-creacion-de-la-maquina-contenedor"><strong>1. CAPTURA Creación de la máquina (contenedor)</strong></h2>
+<p><img alt="" src="../img/9.png" /></p>
+<p>A continuación vamos a comprobar que dicha web estática ya está cargando a través del puerto 8085 en local.</p>
+<p>En el navegador de la máquina kali, cargo la siguiente url -&gt; <strong>http://localhost:8085</strong></p>
+<h2 id="2-captura-contenedor-nginx-en-marcha-y-mostrando-la-web-de-github-pages-en-localhost">2. CAPTURA Contenedor NGINX en marcha y mostrando la web de GitHub pages en localhost.</h2>
+<p><img alt="" src="../img/10.png" /></p>
+<p>A continuo procedo a la creación del archivo docker inspect, que nos mostrará información detallada del contenedor creado.</p>
+<pre><code>docker inspect PPSUnidad0-Tarea_Manuel_Benitez &gt; inspect.txt
+</code></pre>
+<h2 id="3-capturas-del-archivo-inspecttxt">3. <strong>CAPTURAS del archivo -&gt; inspect.txt</strong></h2>
+<p><img alt="" src="../img/11.png" /></p>
+<p><img alt="" src="../img/12.png" /></p>
+<p><img alt="" src="../img/13.png" /></p>
+<p>Adjunto archivo inspect.txt, en el archivo comprimido de la entrega de la tarea.</p></div>
             </div>
         </div>
 
